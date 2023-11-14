@@ -65,7 +65,6 @@ To deploy the Django application to a production environment, you can build the 
 ## Additional Notes
 
 * This project uses PostgreSQL as the database for the Django application. You can change the database to a different type by editing the `docker-compose.yml` file.
-* This project uses Gunicorn as the WSGI server for the Django application. You can change the WSGI server to a different type by editing the `Dockerfile` file.
 
 ## License
 
