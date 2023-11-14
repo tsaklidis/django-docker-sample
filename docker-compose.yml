@@ -1,0 +1,24 @@
+version: '3.5'
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=some_secret_pass
+      - POSTGRES_USER=some_secret_user
+      - POSTGRES_PASSWORD=some_secret_pass_v2
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000 --nothreading
+    volumes:
+      - .:/compare
+    ports:
+      - "8000:8000"
+    environment:
+      - POSTGRES_DB=some_secret_pass
+      - POSTGRES_USER=some_secret_user
+      - POSTGRES_PASSWORD=some_secret_pass_v2
+    depends_on:
+      - db

@@ -1,0 +1,5 @@
+Django==4.2.7
+psycopg2
+beautifulsoup4==4.12.2
+ipython==8.17.2
+requests
